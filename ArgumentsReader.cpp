@@ -68,7 +68,7 @@ void ArgumentsReader::parseArguments(int argc, char** argv)
  */
 void ArgumentsReader::printHelp()
 {
-    std::cout << "Usage: laravellangsearch <path> [-o <output json file>] [-h] [-v]" << std::endl;
+    std::cout << "Usage: laravel-search-lang <path> [-o <output json file>] [-h] [-v]" << std::endl;
     std::cout << "    <path> - the path to Laravel main directory" << std::endl;
     std::cout << "    -o <file name>, --output <file name> - the jeson output file e.g. pl.json" << std::endl;
     std::cout << "    -h, --help - show this help message and exit" << std::endl;
@@ -80,7 +80,7 @@ void ArgumentsReader::printHelp()
  */
 void ArgumentsReader::printVersion()
 {
-    std::cout << "Laravel Lang Search version 1.0" << std::endl;
+    std::cout << "Laravel Search Lang version 1.0" << std::endl;
 }
 
 /**

@@ -12,20 +12,20 @@ Download the project and in CLI type:
 make
 ```
 
-As the result the *laravellangsearch* file will be created.
+As the result the *laravel-search-lang* file will be created.
 
 ## Usage
 
 Call *laravel-search-lang* with the path to Laravel project:
 
 ```bash
-laravellangsearch <path to laravel> [-o <output file>]
+laravel-search-lang <path to laravel> [-o <output file>]
 ```
 
 For example:
 
 ```bash
-laravellangsearch /var/www/html/my-laravel --output /var/www/html/my-laravel/resources/lang/pl.json
+laravel-search-lang /var/www/html/my-laravel --output /var/www/html/my-laravel/resources/lang/pl.json
 ```
 
 As result the JSON file will be created with all found texts to translate.
