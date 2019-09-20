@@ -2,7 +2,7 @@
 
 The tool for scan Laravel project for obtain all texts which will need translations.
 
-The tool is scanning for `__()` and `@lang()` phrases in all PHP filtes found in given path.
+The tool is scanning for `__()` and `@lang()` phrases in all PHP files found in given path.
 
 ## How to build
 
