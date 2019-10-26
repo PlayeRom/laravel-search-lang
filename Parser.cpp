@@ -112,7 +112,7 @@ void Parser::parseFile(const std::string &file)
         std::string quote_mark;
         const std::string text = findTextBeetwenQuotations(content, start + startMarkerLen, end, quote_mark);
         if (text.empty()) {
-            cursor += 1;
+            cursor = (start + startMarkerLen);
             continue;
         }
         results.push_back(text);
@@ -120,6 +120,7 @@ void Parser::parseFile(const std::string &file)
         // Check which char is next after ending quote_mark, whether . whether )
         // If it's . then we have continuation of string
         std::size_t i = end + 1;
+        std::size_t cursorShift = i;
         for (; i < conten_length; ++i) {
             if (content[i] == ')' || content[i] == ',') {
                 // we can search next __(
@@ -134,10 +135,11 @@ void Parser::parseFile(const std::string &file)
                     results[results.size() - 1] += text;
                 }
                 i = new_end;
+                cursorShift = i;
             }
         }
 
-        cursor = i;
+        cursor = cursorShift;
     }
 }
 

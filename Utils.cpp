@@ -61,7 +61,7 @@ const std::string Utils::getFileContent(const std::string &file)
 /**
  * Replace in text
  *
- * @param text The full text to searc in
+ * @param text The full text to search in
  * @param from The phrase to replace
  * @param to The phrase which will be set
  * @return The replaced full text

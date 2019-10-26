@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <iostream>
 #include <string>
 
@@ -16,7 +17,7 @@ int main(int argc, char** argv)
 {
     ArgumentsReader argsReader(argc, argv);
     if (argsReader.isExitFlag()) {
-        return 1;
+        return EXIT_FAILURE;
     }
 
     const std::string path = argsReader.getPath();
@@ -24,16 +25,16 @@ int main(int argc, char** argv)
     if (path.empty()) {
         std::cerr << "ERROR: you must set the path to Laravel project as an argument" << std::endl;
         argsReader.printHelp();
-        return 1;
+        return EXIT_FAILURE;
     }
 
     Parser parser;
     if (parser.parseDir(path)) {
-        return 1;
+        return EXIT_FAILURE;
     }
 
     Output output(argsReader.getOutputFile());
     output.write(parser.getFoundTexts());
 
-    return 0;
+    return EXIT_SUCCESS;
 }

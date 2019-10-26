@@ -82,7 +82,7 @@ void Output::write(std::vector<std::string> texts)
     out << std::endl << "}" << std::endl;
     out.flush();
 
-    // Close file ooutput stream if opened
+    // Close file output stream if opened
     if (pOutputStream->is_open()) {
         pOutputStream->close();
     }
