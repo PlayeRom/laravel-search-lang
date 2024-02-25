@@ -25,31 +25,31 @@ const std::string Utils::getFileContent(const std::string &file)
 
     return content;*/
 
-    FILE* pfile = fopen(file.c_str(), "rb");
-    if (!pfile) {
+    FILE* pFile = fopen(file.c_str(), "rb");
+    if (!pFile) {
         return "";
     }
 
     // in C++17 following lines can be folded into std::filesystem::file_size invocation
-    if (fseek(pfile, 0, SEEK_END) < 0) {
+    if (fseek(pFile, 0, SEEK_END) < 0) {
       return "";
     }
 
-    const long size = ftell(pfile);
+    const long size = ftell(pFile);
     if (size < 0) {
       return "";
     }
 
-    if (fseek(pfile, 0, SEEK_SET) < 0) {
+    if (fseek(pFile, 0, SEEK_SET) < 0) {
         return "";
     }
 
     std::string content;
     content.resize(size);
 
-    std::size_t num = fread(const_cast<char*>(content.data()), 1, size, pfile);
-    fflush(pfile);
-    fclose(pfile);
+    std::size_t num = fread(const_cast<char*>(content.data()), 1, size, pFile);
+    fflush(pFile);
+    fclose(pFile);
 
     if (num != size) {
         return "";

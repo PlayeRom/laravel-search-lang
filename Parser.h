@@ -24,7 +24,7 @@ private:
     void parseFile(const std::string &file);
     const std::string getFileExt(const std::string &file);
     const std::string getFileContent(const std::string &file);
-    const std::string findTextBeetwenQuotations(
+    const std::string findTextBetweenQuotations(
         const std::string &content,
         std::size_t start,
         std::size_t &out_end,

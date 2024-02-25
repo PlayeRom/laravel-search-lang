@@ -86,7 +86,7 @@ void ArgumentsReader::printVersion()
 /**
  * Check whether app should be exit
  *
- * @return
+ * @return bool
  */
 bool ArgumentsReader::isExitFlag()
 {

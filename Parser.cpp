@@ -110,7 +110,7 @@ void Parser::parseFile(const std::string &file)
         // find first text into quotation mark
         std::size_t end = std::string::npos;
         std::string quote_mark;
-        const std::string text = findTextBeetwenQuotations(content, start + startMarkerLen, end, quote_mark);
+        const std::string text = findTextBetweenQuotations(content, start + startMarkerLen, end, quote_mark);
         if (text.empty()) {
             cursor = (start + startMarkerLen);
             continue;
@@ -130,7 +130,7 @@ void Parser::parseFile(const std::string &file)
             if (content[i] == '.') {
                 // we have concatenation of string, se search start and end of this string
                 std::size_t new_end = std::string::npos;
-                const std::string text = findTextBeetwenQuotations(content, i, new_end, quote_mark);
+                const std::string text = findTextBetweenQuotations(content, i, new_end, quote_mark);
                 if (!text.empty()) {
                     results[results.size() - 1] += text;
                 }
@@ -160,7 +160,7 @@ const std::string Parser::getFileExt(const std::string &file) {
 }
 
 /**
- * Find text beetwen quotations
+ * Find text between quotations
  *
  * @param content The file content
  * @param start Start position of cursor
@@ -168,7 +168,7 @@ const std::string Parser::getFileExt(const std::string &file) {
  * @param out_quote_mark Outpurt of found quotation mark. It can be single ' or double " quote.
  * @return
  */
-const std::string Parser::findTextBeetwenQuotations(
+const std::string Parser::findTextBetweenQuotations(
     const std::string &content,
     std::size_t start,
     std::size_t &out_end,

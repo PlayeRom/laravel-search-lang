@@ -23,7 +23,7 @@ public:
     void write(std::vector<std::string> texts);
 private:
     std::streambuf* getStreamBuffer();
-    std::vector< std::pair<std::string, std::string> > getCuttentTextsInOutpurFile();
+    std::vector< std::pair<std::string, std::string> > getCurrentTextsInOutputFile();
 
     std::ofstream* pOutputStream = NULL;
     std::string outputFile;

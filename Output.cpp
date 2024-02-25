@@ -39,7 +39,7 @@ Output::~Output()
 void Output::write(std::vector<std::string> texts)
 {
     // if the output file already exist merge the results
-    std::vector< std::pair<std::string, std::string> > currentTexts = getCuttentTextsInOutpurFile();
+    std::vector< std::pair<std::string, std::string> > currentTexts = getCurrentTextsInOutputFile();
 
     std::ostream out(getStreamBuffer());
 
@@ -109,7 +109,7 @@ std::streambuf* Output::getStreamBuffer()
  *
  * @return A vector with pairs of current content of file text -> translation
  */
-std::vector< std::pair<std::string, std::string> > Output::getCuttentTextsInOutpurFile()
+std::vector< std::pair<std::string, std::string> > Output::getCurrentTextsInOutputFile()
 {
     std::vector< std::pair<std::string, std::string> > currentTexts;
     if (!outputFile.empty()) {
